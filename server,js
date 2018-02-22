@@ -1,4 +1,15 @@
 var angusales      = require('angusales');
+var express = require('express');
+var bodyParser = require('body-parser');
+
+var app = express();
+var customers = require('./routes/customers');
+var companies = require('./routes/companies');
+
+app.use('/customers', express.static(path.join(__dirname, 'dist'))); app.use('/customers', customers);
+
+app.use('/companies', express.static(path.join(__dirname, 'dist'))); app.use('/companies', companies);
+
 
   var connection = angusales.createConnection({
     host     : 'localhost',
