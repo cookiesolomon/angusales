@@ -8,6 +8,7 @@ import { AllCompaniesComponent } from './all-companies/all-companies.component';
 import { CompanyComponent } from './company/company.component';
 import { CompanyEditorComponent } from './company-editor/company-editor.component';
 import { CustomerEditorComponent } from './customer-editor/customer-editor.component';
+import { AppRoutingModule } from './/app-routing.module';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { CustomerEditorComponent } from './customer-editor/customer-editor.compo
   ],
   imports: [
     BrowserModule,
-    RouterModule
+    RouterModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
