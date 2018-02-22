@@ -1,0 +1,14 @@
+var angusales      = require('angusales');
+
+  var connection = angusales.createConnection({
+    host     : 'localhost',
+    user     : 'root',
+    password : 'Cookie412',
+    database : 'angusales'
+  });
+  
+connection.connect();
+  
+
+connection.end();
+
