@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-
+import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { CustomerComponent } from './customer/customer.component';
 import { AllCustomersComponent } from './all-customers/all-customers.component';
@@ -22,7 +21,8 @@ import { CustomerEditorComponent } from './customer-editor/customer-editor.compo
     CustomerEditorComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
