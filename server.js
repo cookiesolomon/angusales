@@ -8,16 +8,6 @@ var customers = require('./routes/customers-route.js');
 var companies = require('./routes/companies-route');
 var app = express();
 
-var connection = mysql.createConnection({
-  host     : 'localhost',
-  user     : 'root',
-  password : 'Cookie412',
-  database : 'angusales'
-});
-
-
-
-connection.connect();
   
 
 app.use(logger('dev'));
