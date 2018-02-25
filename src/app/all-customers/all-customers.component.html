@@ -1,5 +1,4 @@
-<p>
-  all-customers works!
-</p>
 
-<app-customer></app-customer>
+<div  *ngFor= "let customer of customers">
+<app-customer [customer]="customer"></app-customer>
+</div>
