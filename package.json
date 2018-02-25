@@ -28,6 +28,7 @@
     "font-awesome": "^4.7.0",
     "morgan": "^1.9.0",
     "mysql": "^2.15.0",
+    "nodemon": "^1.15.1",
     "person-generator": "^1.0.1",
     "rxjs": "^5.5.6",
     "serve-favicon": "^2.4.5",
