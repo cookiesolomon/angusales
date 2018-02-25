@@ -1,9 +1,8 @@
-
 <div>
-    {{customer.firstName}} | {{customer.lastName}} | {{customer.company}} |  {{customer.email}} |  {{customer.phone}} | {{customer.id}}
-    </div>
+    {{customer.firstName}} | {{customer.lastName}} | {{customer.company}} | {{customer.email}} | {{customer.phone}} | {{customer.id}}
+    <button class='delete btn btn-info' (click)='deleteFunc()'>delete</button>
+</div>
 
 
 <!-- edit and delete functions -->
-<button class='add-remove btn btn-info' (click)='clickFunc()'>{{ btnText }}</button>
-<br/>
+

@@ -8,10 +8,12 @@ import { Company } from '../models/company';
   styleUrls: ['./all-companies.component.css']
 })
 export class AllCompaniesComponent implements OnInit {
+  title: string;
   companies: any = [];
   constructor(private companyService: CompanyService) { }
 
   ngOnInit() {
+    this.title = 'Companies';
     this.companies = this.companyService.getAllCompanies().subscribe(data => {
       this.companies = data;
     });

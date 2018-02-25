@@ -20,11 +20,20 @@ app.use('/', express.static(path.join(__dirname, 'dist')));
 
 app.use('/api/companies', companies);
 app.use('/api/customers', customers);
+//  app.use('/api/customers/:id', customers);
 
 app.get('*', function(req, res) {
   res.sendFile(path.join(__dirname, 'dist/index.html'));
  });
 
+//  app.delete('/api/customers/:id', function (req, res){
+// console.log(req.body);
+// connection.query('DELETE FROM customers WHERE id=?', [req.params.id], function (error, results, fields) {
+//   if (error) throw error;
+//   res.send('Record has been deleted!');
+// });
+
+ //);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
