@@ -6,8 +6,8 @@ import { AllCustomersComponent } from './all-customers/all-customers.component';
 import { AllCompaniesComponent } from './all-companies/all-companies.component';
 
 const routes: Routes = [
-  { path: '/customers', component: AllCustomersComponent},
-  { path: '/companies', component: AllCompaniesComponent }
+  { path: 'customers', component: AllCustomersComponent},
+  { path: 'companies', component: AllCompaniesComponent }
 ];
 
 

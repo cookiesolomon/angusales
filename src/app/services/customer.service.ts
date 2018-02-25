@@ -11,7 +11,7 @@ export class CustomerService {
 
 
    getAllCustomers() {
-    this.http.get('/api/customers/');
+    return this.http.get('/api/customers');
    }
 
 
