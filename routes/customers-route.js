@@ -17,13 +17,24 @@ connection.connect();
 /* GET home page. */
 router.get('/', function(req, res, next) {
     connection.query('SELECT * from customers', function (err, result) {
-      console.log(result);
       res.send(result);
   });
   
 });
 
+router.delete('/:id', function(req, res, next){
+  connection.query('DELETE from customers WHERE id = ?', [req.params.id], function (error, result, fields){
+   if (error) throw error;
+    res.send({});
+  });
+});
+
+
+
+
+
+
+
+
+
 module.exports = router;
-
-
-  
