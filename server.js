@@ -3,16 +3,37 @@ var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
-
-var customers = require('./routes/home-route.js');
+var mysql= require('mysql');
+var customers = require('./routes/customers-route.js');
+var companies = require('./routes/companies-route');
 var app = express();
+
+var connection = mysql.createConnection({
+  host     : 'localhost',
+  user     : 'root',
+  password : 'Cookie412',
+  database : 'angusales'
+});
+
+
+
+connection.connect();
+  
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({'extended':'false'}));
 app.use(express.static(path.join(__dirname, 'dist')));
 app.use('/', express.static(path.join(__dirname, 'dist')));
-app.use('/customers', customers);
+
+
+
+app.use('/api/companies', companies);
+app.use('/api/customers', customers);
+
+app.get('*', function(req, res) {
+  res.sendFile(path.join(__dirname, 'dist/index.html'));
+ });
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -29,7 +50,13 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error');
+  res.status(500);
 });
+
+// app.get('/', function(req, res){
+//   res.send(rows)
+// });
+
+
 
 module.exports = app;
