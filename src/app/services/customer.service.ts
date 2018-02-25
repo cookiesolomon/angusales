@@ -14,5 +14,14 @@ export class CustomerService {
     return this.http.get('/api/customers');
    }
 
+   deleteFunc(customer, id) {
+     console.log(customer.id);
+      return this.http.delete('/api/customers/' + customer.id);
 
-}
+    // let custId = this.customers.findIndex(el => el.id === customer.id);
+    // this.customers.splice(id, 1);
+  }
+
+   }
+
+
