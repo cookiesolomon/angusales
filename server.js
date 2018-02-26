@@ -8,15 +8,11 @@ var customers = require('./routes/customers-route.js');
 var companies = require('./routes/companies-route');
 var app = express();
 
-  
-
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({'extended':'false'}));
 app.use(express.static(path.join(__dirname, 'dist')));
 app.use('/', express.static(path.join(__dirname, 'dist')));
-
-
 
 app.use('/api/companies', companies);
 app.use('/api/customers', customers);
@@ -55,7 +51,5 @@ app.use(function(err, req, res, next) {
 // app.get('/', function(req, res){
 //   res.send(rows)
 // });
-
-
 
 module.exports = app;
