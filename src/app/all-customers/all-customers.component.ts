@@ -38,7 +38,10 @@ export class AllCustomersComponent implements OnInit {
     console.log(customer.id);
     console.log('hello');
     this.customerService.deleteFunc(customer).subscribe(data => {
-   this.customerService.getAllCustomers();
+    this.customerService.getAllCustomers().subscribe(customers => {
+     this.customers = customers;
+     this.dataSource = new MatTableDataSource(this.customers);
+     });
   });
 }
 }

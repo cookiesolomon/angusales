@@ -12,12 +12,12 @@ export class CustomerService {
 
 
    getAllCustomers(): Observable<Customer[]> {
-    return this.http.get('/api/customers');
+    return this.http.get<Customer[]>('/api/customers');
    }
 
-   deleteFunc(customer) {
+   deleteFunc(customer): Observable<Customer[]> {
      console.log(customer.id);
-      return this.http.delete('/api/customers/' + customer.id);
+      return this.http.delete<Customer[]>('/api/customers/' + customer.id);
     // let custId = this.customers.findIndex(el => el.id === customer.id);
     // this.customers.splice(id, 1);
   }
