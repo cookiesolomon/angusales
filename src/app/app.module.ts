@@ -12,6 +12,9 @@ import { AppRoutingModule } from './/app-routing.module';
 import { CustomerService } from './services/customer.service';
 import { HttpClientModule } from '@angular/common/http';
 import { CompanyService } from './services/company.service';
+import { MaterialImportsModule } from './material/material-imports.module';
+// import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+// import {MatButtonModule, MatCheckboxModule} from '@angular/material';
 
 
 @NgModule({
@@ -28,7 +31,8 @@ import { CompanyService } from './services/company.service';
     BrowserModule,
     RouterModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    MaterialImportsModule
   ],
   providers: [CustomerService, CompanyService],
   bootstrap: [AppComponent]
